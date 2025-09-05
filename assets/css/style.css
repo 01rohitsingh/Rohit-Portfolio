@@ -130,6 +130,8 @@ header .navbar ul li a:hover {
   border-bottom: 0.2rem solid #0ef;
   padding: 0.5rem 0;
 }
+
+
 /* navbar ends */
 
 /* hamburger icon starts*/
@@ -213,20 +215,32 @@ header .navbar ul li a:hover {
   padding-top: 1rem;
   z-index: 1;
 }
+
+
+
+/*  yaha likha huuuaaa
+ */
+
+
 .home .image {
   flex: 1 1 40rem;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .home .image img {
-  width: 500px;
+  max-width: 100%;
   height: 500px;
+  width: 500px;   /* desktop ke liye */
   margin-top: 5rem;
   margin-left: 6rem;
   border-radius: 2%;
-  /* border-radius: 50%; */
-  /* box-shadow: 0 2px 8px #0ef; */
   cursor: pointer;
+  transition: 0.3s;
 }
+
 .home .image img:hover {
   box-shadow: 0 5px 15px #0ef;
 }
@@ -348,6 +362,14 @@ header .navbar ul li a:hover {
 /* social icons end  */
 
 /* hero media queries starts*/
+@media screen and (max-width: 992px) {
+  .home .image img {
+    width: 350px;
+    height: auto;
+    margin-top: 3rem;
+    margin-left: 0;   /* center me laye */
+  }
+}
  @media (max-width: 600px) {
   .home .btn {
     margin: 4rem 0;
@@ -356,8 +378,16 @@ header .navbar ul li a:hover {
     margin-top: 12rem;
     
   }
+    .home .image {
+    margin-top: 2rem;
+    text-align: center;
+  }
   .home .image img {
-    margin-top: 1rem;
+    width: 250px;
+    height: auto;
+   
+    margin: 0 auto;   /* center align */
+    display: block;
   }
   .home .content p {
     font-size: 2.2rem;
@@ -603,6 +633,7 @@ header .navbar ul li a:hover {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin: 0;
+     margin-right: 3rem;
     padding: 1rem;
   }
 
@@ -695,30 +726,34 @@ header .navbar ul li a:hover {
 
 /* education media queries starts*/
 @media screen and (max-width: 600px) {
+  .education .box-container {
+    gap: 1.5rem;
+  }
   .education .box-container .box {
     flex-direction: column;
     width: 100%;
   }
   .education .box-container .box .image {
     width: 100%;
-    height: 25rem;
+    height: 20rem; /* fixed height for uniform look */
   }
   .education .box-container .box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .education .box-container .box .content {
     position: relative;
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    flex-wrap: wrap;
-    flex: 0;
   }
   .education .btns {
     margin-top: 2rem;
     margin-left: 1rem;
     margin-right: 1rem;
     flex-wrap: wrap;
+    text-align: center;
   }
 }
 /* education media queries ends*/
@@ -1537,6 +1572,7 @@ form .button-area {
   font-size: 1.5rem;
   animation: pound 0.35s infinite alternate;
 }
+/* 🔹 Animation */
 @-webkit-keyframes pound {
   to {
     transform: scale(1.1);
@@ -1547,23 +1583,59 @@ form .button-area {
     transform: scale(1.1);
   }
 }
-@media (max-width: 450px) {
+
+/* 🎯 Default (Desktop ≥ 992px) */
+.footer .box-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer .box-container .box {
+  flex: 1 1 22rem;
+  margin: 2rem;
+}
+.footer .box-container .box p {
+  padding: 1rem;
+}
+.footer .box-container .box .share a {
+  padding: 1rem;
+}
+
+/* 📱 Tablet (600px – 991px) */
+@media (max-width: 992px) {
+  .footer .box-container {
+    flex-direction: row;
+    justify-content: center;
+  }
   .footer .box-container .box {
+    flex: 1 1 45%;
     margin: 1.5rem;
   }
+}
+
+/* 📱 Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .footer .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .box-container .box {
+    width: 90%;
+    margin: 1.5rem 0;
+  }
   .footer .box-container .box p {
-    padding: 0.7rem;
+    padding: 0.8rem;
   }
   .footer .box-container .box .share a {
     padding: 1.2rem;
   }
 }
-/* footer section ends */
 
-/* common media queries starts*/
+/* 📱 Extra Small Mobile (≤ 450px) */
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 55%; /* smaller base font */
   }
   body {
     padding-right: 0;
@@ -1571,7 +1643,17 @@ form .button-area {
   section {
     padding: 2rem;
   }
+  .footer .box-container .box {
+    margin: 1rem 0;
+  }
+  .footer .box-container .box p {
+    padding: 0.7rem;
+  }
+  .footer .box-container .box .share a {
+    padding: 1rem;
+  }
 }
+
 /* common media queries ends*/
 
 /* scroll top starts */

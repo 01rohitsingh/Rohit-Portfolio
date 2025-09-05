@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "UI/UX Designer"],
+    strings: ["frontend developer", "UI/UX Designer","Backend Developer","Data Analytics"],
     loop: true,
     typeSpeed: 60,
     backSpeed: 30,
@@ -260,5 +260,6 @@ window.addEventListener('load', () => {
       bar.style.animationDelay = `${randomDelay}s`; // Apply the random delay
     });
   });
+  
   
   
